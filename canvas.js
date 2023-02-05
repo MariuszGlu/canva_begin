@@ -47,18 +47,24 @@ const c = canvas.getContext('2d')
 
 let x = 100
 let dx = 4
+let y = 300
+let dy = 4
 const radius = 30
 const animate = () => {
 	requestAnimationFrame(animate)
 	c.clearRect(0, 0, innerWidth, innerHeight)
 	c.beginPath()
-	c.arc(x, 300, 30, 0, Math.PI * 2, false)
+	c.arc(x, y, 30, 0, Math.PI * 2, false)
 	c.strokeStyle = 'green'
 	c.stroke()
-	if (x+radius >innerWidth || x-radius<0) {
+	if (x + radius > innerWidth || x - radius < 0) {
 		dx = -dx
 	}
 	x += dx
+	if (y + radius > innerHeight || y - radius < 0) {
+		dy = -dy
+	}
+	y += dy
 }
 
 animate()
