@@ -32,3 +32,15 @@ c.beginPath()
 c.arc(300, 300, 30, 0,Math.PI*2,false)
 c.strokeStyle = 'green'
 c.stroke()
+
+for (let i = 0; i < 100; i++) {
+    
+    const x = Math.random()*window.innerWidth
+    const y = Math.random()*window.innerHeight
+
+    c.beginPath()
+    c.strokeStyle = 'black'
+    c.arc(x,y,30,0,Math.PI*2,false)
+    c.stroke()
+    
+}
